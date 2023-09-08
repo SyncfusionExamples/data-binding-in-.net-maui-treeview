@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.TreeView;assembly=Syncfusion.Maui.TreeView"
+             xmlns:local="clr-namespace:TreeViewMaui"
+             x:Class="TreeViewMaui.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:FileManagerViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <syncfusion:SfTreeView x:Name="treeView" 
+                                   ChildPropertyName="SubFiles"
+                                   ItemsSource="{Binding ImageNodeInfo}"  
+                                   AutoExpandMode="AllNodesExpanded">
+
+                <syncfusion:SfTreeView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="grid" RowSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Image Source="{Binding ImageIcon}"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center"
+                                       HeightRequest="24" 
+                                       WidthRequest="24"/>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Label LineBreakMode="NoWrap"
+                                       Text="{Binding ItemName}"
+                                       VerticalTextAlignment="Center">
+                                </Label>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </syncfusion:SfTreeView.ItemTemplate>
+            </syncfusion:SfTreeView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
