@@ -76,7 +76,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="*" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="*" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Syncfusion.Maui.Core" Version="*" />
 		<PackageReference Include="Syncfusion.Maui.GridCommon" Version="*" />
 		<PackageReference Include="Syncfusion.Maui.TreeView" Version="*" />
